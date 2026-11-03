@@ -1,4 +1,4 @@
-import {CART_KEY,variantIndex,sanitizeCart,changeCart,filterProducts} from './core.js';
+import {CART_KEY,variantIndex,sanitizeCart,changeCart,filterProducts} from './core.js?v=cf8d5f850f3f';
 const base=document.body.dataset.base;
 const e=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=c=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(c/100);
@@ -6,7 +6,7 @@ const url=(src,width=600)=>{const u=new URL(src);u.searchParams.set('width',widt
 const path=p=>`${base}products/${p.handle}/`;
 const announce=text=>{document.querySelector('#store-status').textContent=text;};
 const imageHTML=(src,alt)=>`<img src="${e(url(src))}" alt="${e(alt)}" width="600" height="600" loading="lazy">`;
-const data=await fetch(`${base}assets/catalog.json`).then(r=>{if(!r.ok)throw new Error('Catalog failed to load');return r.json();});
+const data=await fetch(`${base}assets/catalog.json?v=${document.body.dataset.assetVersion}`).then(r=>{if(!r.ok)throw new Error('Catalog failed to load');return r.json();});
 const {products,locale}=data,index=variantIndex(products);
 let lines=[];
 try{lines=sanitizeCart(JSON.parse(localStorage.getItem(CART_KEY)),index);}catch{}
