@@ -508,6 +508,48 @@ input::-webkit-inner-spin-button {
   margin-bottom:2.4rem;
   line-height:1.9
 }
+.maker-profile {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:6rem;
+  padding-bottom:7rem
+}
+.maker-portrait img {
+  width:100%;
+  height:auto
+}
+.maker-statement h2 {
+  font-size:3.4rem;
+  margin-bottom:2.5rem
+}
+.maker-statement blockquote {
+  border:0;
+  margin:0 0 3rem;
+  padding:0
+}
+.maker-statement blockquote p {
+  font-size:1.4rem;
+  line-height:1.95;
+  color:#555
+}
+.maker-statement cite {
+  display:block;
+  font-size:1.1rem;
+  font-style:normal;
+  margin-top:2rem
+}
+@media(max-width:749px) {
+  .maker-profile {
+    grid-template-columns:1fr;
+    gap:3rem;
+    padding-bottom:5rem
+  }
+  .maker-statement h2 {
+    font-size:2.8rem;
+    margin-bottom:2rem
+  }
+}
 .site-footer {
   padding:5rem 0 2rem;
   border-top:1px solid #ddd
